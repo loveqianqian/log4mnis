@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<definitions name="WeatherImplService" targetNamespace="http://impl.Server.myloverqian.com/">
+  <types>
+    <schema>
+      <import namespace="http://impl.Server.myloverqian.com/" schemaLocation="http://192.168.40.1:8081/weather?xsd=1"/>
+    </schema>
+  </types>
+  <message name="queryWeather">
+    <part name="parameters" element="tns:queryWeather"/>
+  </message>
+  <message name="queryWeatherResponse">
+    <part name="parameters" element="tns:queryWeatherResponse"/>
+  </message>
+  <portType/>
+  <binding/>
+  <service/>
+</definitions>

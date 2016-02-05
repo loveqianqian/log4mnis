@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="Sqlite (Xerial) - mnistest.db" uuid="dd07327f-94b8-4cad-bb3a-cea38f158b81">
+    <database-info product="SQLite" version="3.8.9" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
+    <schema name="" catalog=""/>
+    <table name="dept" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER(5)" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(20)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+    </table>
+    <table name="emp" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER(10)" precision="0" scale="-1" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="TEXT(20)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="dept_no" sqlType="INTEGER(20)" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <foreign-key name="#FAKE_emp_1" columns="dept_no" ref-table="dept" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="2" deferrability="1"/>
+    </table>
+  </data-source>
+</component>

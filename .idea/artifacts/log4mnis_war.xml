@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="log4mnis:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="mnis.war">
+      <element id="artifact" artifact-name="log4mnis:war exploded" />
+    </root>
+  </artifact>
+</component>
