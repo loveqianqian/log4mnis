@@ -1,30 +1,34 @@
-package com.heren.log4mnis.dao;
+package com.heren.log4mnis.model;
 
 /**
  * <p>ProjectName:log4mnis</p>
- * <p>Description:</p>
+ * <p>Description:emp测试</p>
  *
  * @author:diaozhiwei
  * @data:2016/2/11
  */
-public class TestDao {
-    private String id;
+public class Test {
+    private int id;
     private String name;
-    private String deptNo;
+    private int deptNo;
 
     @Override
     public String toString() {
         return "id:" + id + "-name:" + name + "-dept_no:" + deptNo;
     }
 
-    public TestDao() {
+    public Test() {
     }
 
-    public String getId() {
+    public Test(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -36,11 +40,11 @@ public class TestDao {
         this.name = name;
     }
 
-    public String getDeptNo() {
+    public int getDeptNo() {
         return deptNo;
     }
 
-    public void setDeptNo(String deptNo) {
+    public void setDeptNo(int deptNo) {
         this.deptNo = deptNo;
     }
 }

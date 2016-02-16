@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heren.log4mnis.dao.TestMapper">
+    <resultMap id="testMap" type="Test">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="dept_no" property="deptNo"/>
+    </resultMap>
+
+    <select id="loadTest" resultMap="testMap">
+        SELECT
+            id,
+            name,
+            dept_no
+        FROM emp;
+    </select>
+    <insert id="addTest" parameterType="Test">
+        INSERT INTO emp (id, name, dept_no) VALUES (
+            #{id,jdbcType=NUMERIC},
+            #{name,jdbcType=VARCHAR},
+            #{deptNo,jdbcType=NUMERIC}
+        )
+    </insert>
+    <insert id="addTestAuto" parameterType="Test">
+        INSERT INTO emp (id, name, dept_no) VALUES (
+            (SELECT MAX(t.id)
+             FROM emp t) + 1,
+            #{name,jdbcType=VARCHAR},
+            #{deptNo,jdbcType=NUMERIC}
+        )
+    </insert>
+    <delete id="delTest" parameterType="Test">
+        DELETE FROM emp
+        WHERE id = #{id,jdbcType=NUMERIC}
+    </delete>
+    <update id="modTest" parameterType="Test">
+        UPDATE emp
+        SET name    = #{name,jdbcType=VARCHAR},
+            dept_no = #{deptNo,jdbcType=NUMERIC}
+        WHERE id = #{id,jdbcType=NUMERIC}
+    </update>
+</mapper>

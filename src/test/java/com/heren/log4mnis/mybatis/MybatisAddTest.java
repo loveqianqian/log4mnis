@@ -14,14 +14,20 @@ import java.io.InputStream;
  * @author:diaozhiwei
  * @data:2016/2/11
  */
-public class MybatisTest {
+public class MybatisAddTest {
     public static void main(String[] args) {
         String file = "mybatis.config.test.xml";
-        InputStream stream = MybatisTest.class.getClassLoader().getResourceAsStream(file);
+        InputStream stream = MybatisAddTest.class.getClassLoader().getResourceAsStream(file);
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(stream);
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        String statement = "com.heren.log4mnis.model.Test.loadTest";
-        Test test = sqlSession.selectOne(statement);
-        System.out.println(test);
+        String statement2 = "com.heren.log4mnis.model.Test.addTest";
+        Test test2 = new Test();
+        test2.setId(11);
+        test2.setName("Mr.test");
+        test2.setDeptNo(1);
+        int insert = sqlSession.insert(statement2, test2);
+        sqlSession.commit();
+        sqlSession.close();
+        System.out.println("insert:" + insert);
     }
 }

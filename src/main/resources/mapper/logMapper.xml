@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heren.log4mnis.dao.LogMapper">
+    <resultMap id="logMap" type="log">
+        <result column="log_id" property="logId"/>
+        <result column="type" property="type"/>
+        <result column="timestamp" property="timestamp"/>
+        <result column="content" property="content"/>
+        <result column="content_type" property="contentType"/>
+        <result column="original" property="original"/>
+        <result column="code" property="code"/>
+        <result column="key_words" property="keyWords"/>
+    </resultMap>
+
+    <insert id="addLog" parameterType="log">
+        INSERT INTO lm_log (
+            type, timestamp, content, content_type, original, code, key_words
+        ) VALUES (
+            #{type,jdbcType=VARCHAR},
+            #{timestamp,jdbcType=NUMERIC},
+            #{content,jdbcType=VARCHAR},
+            #{contentType,jdbcType=VARCHAR},
+            #{original,jdbcType=VARCHAR},
+            #{code,jdbcType=VARCHAR},
+            #{keyWords,jdbcType=VARCHAR}
+        )
+    </insert>
+    <delete id="delLogById" parameterType="java.util.Map">
+        DELETE FROM lm_log
+        WHERE log_id = #{logId,jdbcType=NUMERIC}
+    </delete>
+    <delete id="delLogByTimeStamp" parameterType="java.util.Map">
+        DELETE FROM lm_log
+         <![CDATA[
+        WHERE timestamp >= #{startTime,jdbcType=NUMERIC}
+              AND timestamp <= #{endTime,jdbcType=NUMERIC}
+        ]]>
+    </delete>
+    <select id="queryLog" parameterType="java.util.Map" resultMap="logMap">
+        SELECT
+            t.[log_id],
+            t.[type],
+            t.[timestamp],
+            t.[content],
+            t.[content_type],
+            t.[original],
+            t.[code],
+            t.[key_words]
+        FROM lm_log t, lm_log_type m
+        WHERE t.[type] = m.[name]
+              AND m.[id] = #{id,jdbcType=NUMERIC}
+    </select>
+</mapper>
