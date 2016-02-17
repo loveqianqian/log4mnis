@@ -19,8 +19,7 @@ import java.util.Map;
  * @author:diaozhiwei
  * @data:2016/2/16
  */
-@Service
-@Transactional(readOnly = true)
+@Service("daemonThread")
 public class DaemonThread extends Thread {
 
     @Autowired
@@ -30,21 +29,17 @@ public class DaemonThread extends Thread {
     private volatile boolean finished = false;
 
     @Override
-    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.DEFAULT, readOnly = false)
     public void run() {
         while (!finished) {
-            if (tasks.isEmpty()) {
-                TemporaryStorage storage = new TemporaryStorage();
-                Map<Long, Object> map = storage.delTask();
-                tasks = map;
-            }
-            Log log = null;
+            Log log;
             try {
-                log = getEarly();
+                if (!tasks.isEmpty()) {
+                    log = getEarly();
+                    logMapper.addLog(log);
+                }
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
-            logMapper.addLog(log);
         }
     }
 
@@ -63,6 +58,10 @@ public class DaemonThread extends Thread {
 
     public void addTask(Long timestamp, Object task) {
         tasks.put(timestamp, task);
+    }
+
+    public void addTask(Map<Long, Object> params) {
+        tasks.putAll(params);
     }
 
     public void stopMe() {

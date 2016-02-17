@@ -18,7 +18,7 @@
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 
         <property name="driverClass" value="org.sqlite.JDBC"/>
-        <property name="jdbcUrl" value="jdbc:sqlite:src/main/resources/mnistest.db"/>
+        <property name="jdbcUrl" value="jdbc:sqlite:D:\sqlite3Db\mnistest.db"/>
         <property name="user" value="root"/>
         <property name="password" value="root"/>
 

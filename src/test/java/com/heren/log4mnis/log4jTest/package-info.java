@@ -1,0 +1,6 @@
+/**
+ * <p>Description:</p>
+ * <p>ProjectName:log4mnis</p>
+ * Created by diaozhiwei on 2016/2/6.
+ */
+package com.heren.log4mnis.log4jTest;

@@ -19,7 +19,7 @@ public class SqliteTest {
                 "WHERE emp.dept_no = dept.id;";
         try {
             Class.forName("org.sqlite.JDBC");
-            Connection connection = DriverManager.getConnection("jdbc:sqlite:resources/mnistest.db");
+            Connection connection = DriverManager.getConnection("jdbc:sqlite:D:\\sqlite3Db\\mnistest.db");
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
             while (resultSet.next()) {
