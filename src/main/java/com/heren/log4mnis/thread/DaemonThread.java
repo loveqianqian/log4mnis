@@ -1,4 +1,4 @@
-package com.heren.log4mnis.service.impl;
+package com.heren.log4mnis.thread;
 
 import com.heren.log4mnis.dao.LogMapper;
 import com.heren.log4mnis.model.Log;

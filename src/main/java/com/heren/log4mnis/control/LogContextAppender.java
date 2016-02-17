@@ -1,6 +1,5 @@
 package com.heren.log4mnis.control;
 
-import com.heren.log4mnis.dao.LogMapper;
 import com.heren.log4mnis.service.ILogService;
 import org.apache.log4j.AppenderSkeleton;
 import org.apache.log4j.spi.LoggingEvent;

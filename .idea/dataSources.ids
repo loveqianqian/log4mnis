@@ -5,52 +5,53 @@
     <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
     <schema name="" catalog=""/>
     <table name="compay" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER(10)" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="dept_name" sqlType="CHAR(20)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="id" sqlType="INTEGER(10)" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="dept_name" sqlType="CHAR(20)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
     </table>
     <table name="dept" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER(5)" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="name" sqlType="VARCHAR(20)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
+      <column name="id" sqlType="INTEGER(5)" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(20)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <exported-key name="#FAKE_emp_1" table="emp" schema="" catalog="" columns="dept_no"/>
     </table>
     <table name="emp" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER(10)" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="name" sqlType="TEXT(20)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="dept_no" sqlType="INTEGER(20)" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="id" sqlType="INTEGER(10)" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="TEXT(20)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="dept_no" sqlType="INTEGER(20)" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
       <primary-key name="[]" columns="[id]"/>
       <foreign-key name="#FAKE_emp_1" columns="dept_no" ref-table="dept" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="2" deferrability="1"/>
     </table>
     <table name="lm_code_dict" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="code" sqlType="INTEGER(5)" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="description" sqlType="VARCHAR2" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="code" sqlType="INTEGER(5)" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="description" sqlType="VARCHAR2" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
       <primary-key columns="id"/>
     </table>
     <table name="lm_keyword_dict" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="name" sqlType="VARCHAR2" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="description" sqlType="VARCHAR2" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR2" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="description" sqlType="VARCHAR2" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
       <primary-key columns="id"/>
     </table>
     <table name="lm_log" schema="" catalog="" type="TABLE">
-      <column name="log_id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="type" sqlType="VARCHAR2(10)" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="timestamp" sqlType="INTEGER(30)" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="content" sqlType="BLOB" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="content_type" sqlType="VARCHAR2" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="original" sqlType="VARCHAR2" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="code" sqlType="VARCHAR2" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="key_words" sqlType="VARCHAR2" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="log_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="type" sqlType="VARCHAR2(10)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="timestamp" sqlType="INTEGER(30)" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="content" sqlType="BLOB" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="content_type" sqlType="VARCHAR2" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="original" sqlType="VARCHAR2" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="code" sqlType="VARCHAR2" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="key_words" sqlType="VARCHAR2" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
       <primary-key columns="log_id"/>
     </table>
     <table name="lm_log_type" schema="" catalog="" type="TABLE">
-      <column name="id" sqlType="INTEGER" precision="0" scale="-1" nullable="false" jdbcType="4"/>
-      <column name="name" sqlType="VARCHAR2" precision="0" scale="-1" nullable="false" jdbcType="12"/>
-      <column name="description" sqlType="VARCHAR2" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR2" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="description" sqlType="VARCHAR2" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
       <primary-key columns="id"/>
     </table>
     <table name="sqlite_sequence" schema="" catalog="" type="TABLE">
-      <column name="name" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
-      <column name="seq" sqlType="" precision="0" scale="-1" nullable="true" jdbcType="12"/>
+      <column name="name" sqlType="" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="seq" sqlType="" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
     </table>
   </data-source>
 </component>

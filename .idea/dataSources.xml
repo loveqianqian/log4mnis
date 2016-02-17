@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="2494219588">
+  <component name="DataSourceManagerImpl" format="xml" hash="2900901633">
     <data-source source="LOCAL" name="Sqlite (Xerial) - mnistest.db" uuid="dd07327f-94b8-4cad-bb3a-cea38f158b81">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/src/main/resources/mnistest.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:D:/sqlite3Db/mnistest.db</jdbc-url>
+      <libraries />
     </data-source>
   </component>
 </project>

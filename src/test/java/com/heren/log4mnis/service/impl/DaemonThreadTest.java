@@ -1,7 +1,7 @@
 package com.heren.log4mnis.service.impl;
 
 import com.heren.log4mnis.model.Log;
-import com.heren.log4mnis.service.impl.DaemonThread;
+import com.heren.log4mnis.thread.DaemonThread;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
